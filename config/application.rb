@@ -22,5 +22,10 @@ module Meat
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+    config.autoload_paths += %W(#{config.root}/app/controllers/shared)
+    config.assets.precompile += %w( .svg .eot .woff .ttf .woff2 .otf)
+    config.assets.precompile += %w( *.js )
   end
 end

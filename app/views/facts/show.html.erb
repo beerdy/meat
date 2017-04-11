@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @fact.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @fact.description %>
+</p>
+
+<p>
+  <strong>Slave:</strong>
+  <%= @fact.slave %>
+</p>
+
+<p>
+  <strong>Image uid:</strong>
+  <%= @fact.image_uid %>
+</p>
+
+<p>
+  <strong>Image name:</strong>
+  <%= @fact.image_name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @fact.url %>
+</p>
+
+<p>
+  <strong>Sort:</strong>
+  <%= @fact.sort %>
+</p>
+
+<%= link_to 'Edit', edit_fact_path(@fact) %> |
+<%= link_to 'Back', facts_path %>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @catalog.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @catalog.description %>
+</p>
+
+<p>
+  <strong>Slave:</strong>
+  <%= @catalog.slave %>
+</p>
+
+<p>
+  <strong>Image uid:</strong>
+  <%= @catalog.image_uid %>
+</p>
+
+<p>
+  <strong>Image name:</strong>
+  <%= @catalog.image_name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @catalog.url %>
+</p>
+
+<p>
+  <strong>Sort:</strong>
+  <%= @catalog.sort %>
+</p>
+
+<%= link_to 'Edit', edit_catalog_path(@catalog) %> |
+<%= link_to 'Back', catalogs_path %>

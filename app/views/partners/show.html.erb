@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @partner.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @partner.description %>
+</p>
+
+<p>
+  <strong>Slave:</strong>
+  <%= @partner.slave %>
+</p>
+
+<p>
+  <strong>Image uid:</strong>
+  <%= @partner.image_uid %>
+</p>
+
+<p>
+  <strong>Image name:</strong>
+  <%= @partner.image_name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @partner.url %>
+</p>
+
+<p>
+  <strong>Sort:</strong>
+  <%= @partner.sort %>
+</p>
+
+<%= link_to 'Edit', edit_partner_path(@partner) %> |
+<%= link_to 'Back', partners_path %>
