@@ -1,161 +1,20 @@
-<!-- header -->
-  <div class="agileits_header">
-    <div class="w3l_offers">
-      <a href="products.html">Today's special Offers !</a>
-    </div>
-    <div class="w3l_search">
-      <form action="#" method="post">
-        <input type="text" name="Product" value="Search a product..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search a product...';}" required="">
-        <input type="submit" value=" ">
-      </form>
-    </div>
-    <div class="product_list_header">  
-      <form action="#" method="post" class="last">
-                <fieldset>
-                    <input type="hidden" name="cmd" value="_cart" />
-                    <input type="hidden" name="display" value="1" />
-                    <input type="submit" name="submit" value="View your cart" class="button" />
-                </fieldset>
-            </form>
-    </div>
-    <div class="w3l_header_right">
-      <ul>
-        <li class="dropdown profile_details_drop">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
-          <div class="mega-dropdown-menu">
-            <div class="w3ls_vegetables">
-              <ul class="dropdown-menu drp-mnu">
-                <li><a href="login.html">Login</a></li> 
-                <li><a href="login.html">Sign Up</a></li>
-              </ul>
-            </div>                  
-          </div>  
-        </li>
-      </ul>
-    </div>
-    <div class="w3l_header_right1">
-      <h2><a href="mail.html">Contact Us</a></h2>
-    </div>
-    <div class="clearfix"> </div>
-  </div>
-<!-- script-for sticky-nav -->
-  <script>
-  $(document).ready(function() {
-     var navoffeset=$(".agileits_header").offset().top;
-     $(window).scroll(function(){
-      var scrollpos=$(window).scrollTop(); 
-      if(scrollpos >=navoffeset){
-        $(".agileits_header").addClass("fixed");
-      }else{
-        $(".agileits_header").removeClass("fixed");
-      }
-     });
-     
-  });
-  </script>
-<!-- //script-for sticky-nav -->
-  <div class="logo_products">
-    <div class="container">
-      <div class="w3ls_logo_products_left">
-        <h1><a href="index.html"><span>Grocery</span> Store</a></h1>
-      </div>
-      <div class="w3ls_logo_products_left1">
-        <ul class="special_items">
-          <li><a href="events.html">Events</a><i>/</i></li>
-          <li><a href="about.html">About Us</a><i>/</i></li>
-          <li><a href="products.html">Best Deals</a><i>/</i></li>
-          <li><a href="services.html">Services</a></li>
-        </ul>
-      </div>
-      <div class="w3ls_logo_products_left1">
-        <ul class="phone_email">
-          <li><i class="fa fa-phone" aria-hidden="true"></i>(+0123) 234 567</li>
-          <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:store@grocery.com">store@grocery.com</a></li>
-        </ul>
-      </div>
-      <div class="clearfix"> </div>
-    </div>
-  </div>
-<!-- //header -->
-<!-- banner -->
-  <div class="banner">
-    <div class="w3l_banner_nav_left">
-      <nav class="navbar nav_bottom">
-       <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header nav_2">
-          <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          </button>
-         </div> 
-         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-          <ul class="nav navbar-nav nav_1">
-            <li><a href="products.html">Branded Foods</a></li>
-            <li><a href="household.html">Households</a></li>
-            <li class="dropdown mega-dropdown active">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Veggies & Fruits<span class="caret"></span></a>        
-              <div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
-                <div class="w3ls_vegetables">
-                  <ul>  
-                    <li><a href="vegetables.html">Vegetables</a></li>
-                    <li><a href="vegetables.html">Fruits</a></li>
-                  </ul>
-                </div>                  
-              </div>        
-            </li>
-            <li><a href="kitchen.html">Kitchen</a></li>
-            <li><a href="short-codes.html">Short Codes</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Beverages<span class="caret"></span></a>
-              <div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
-                <div class="w3ls_vegetables">
-                  <ul>
-                    <li><a href="drinks.html">Soft Drinks</a></li>
-                    <li><a href="drinks.html">Juices</a></li>
-                  </ul>
-                </div>                  
-              </div>  
-            </li>
-            <li><a href="pet.html">Pet Food</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Frozen Foods<span class="caret"></span></a>
-              <div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
-                <div class="w3ls_vegetables">
-                  <ul>
-                    <li><a href="frozen.html">Frozen Snacks</a></li>
-                    <li><a href="frozen.html">Frozen Nonveg</a></li>
-                  </ul>
-                </div>                  
-              </div>  
-            </li>
-            <li><a href="bread.html">Bread & Bakery</a></li>
-          </ul>
-         </div><!-- /.navbar-collapse -->
-      </nav>
-    </div>
-    <div class="w3l_banner_nav_right">
+<% content_for :page_head do %>
       <section class="slider">
         <div class="flexslider">
           <ul class="slides">
+            <% Slider.all.each_with_index do |slide,index| %>
             <li>
-              <div class="w3l_banner_nav_right_banner">
-                <h3>Make your <span>food</span> with Spicy.</h3>
+              <div class="w3l_banner_nav_right_banner<%= index==0?'':index%>" style="background:url(<%=slide.image.url%>) no-repeat 0px 0px;">
+                <h3><%=slide.description.html_safe%></h3>
                 <div class="more">
-                  <a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
+                  <% if slide.url != '' %>
+                  <a href="<%=slide.url%>" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Перейти</a>
+                  <% end unless slide.nil? %>
                 </div>
               </div>
             </li>
-            <li>
-              <div class="w3l_banner_nav_right_banner1">
-                <h3>Make your <span>food</span> with Spicy.</h3>
-                <div class="more">
-                  <a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
-                </div>
-              </div>
-            </li>
+            <%end%>
+            <!--
             <li>
               <div class="w3l_banner_nav_right_banner2">
                 <h3>upto <i>50%</i> off.</h3>
@@ -164,11 +23,11 @@
                 </div>
               </div>
             </li>
+            -->
           </ul>
         </div>
       </section>
       <!-- flexSlider -->
-        <link rel="stylesheet" href="assets/flexslider.css" type="text/css" media="screen" property="" />
         <script type="text/javascript">
         $(window).load(function(){
           $('.flexslider').flexslider({
@@ -180,36 +39,65 @@
         });
         </script>
       <!-- //flexSlider -->
-    </div>
-    <div class="clearfix"></div>
-  </div>
-<!-- banner -->
+<%end%>
+
+<!-- ==================
+- - - - КОНТЕНТ СТРАНИЦЫ
+!! ================== -->
   <div class="banner_bottom">
+
       <div class="wthree_banner_bottom_left_grid_sub">
       </div>
       <div class="wthree_banner_bottom_left_grid_sub1">
         <div class="col-md-4 wthree_banner_bottom_left">
-          <div class="wthree_banner_bottom_left_grid">
-            <img src="assets/4.jpg" alt=" " class="img-responsive" />
-            <div class="wthree_banner_bottom_left_grid_pos">
-              <h4>Discount Offer <span>25%</span></h4>
+          <div class="wthree_banner_bottom_left_grid w3l_banner_nav_right_banner3_btml">
+            <div class="view view-tenth">
+              <img src="assets/24.jpg" alt=" " class="img-responsive">
+              <div class="mask">
+                <h4>Купить мясо для шашлыка</h4>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+              </div>
             </div>
+            <h4>Мясо для шашлыка</h4>
+            <ol>
+              <li>sunt in culpa qui officia</li>
+              <li>commodo consequat</li>
+              <li>sed do eiusmod tempor incididunt</li>
+            </ol>
           </div>
         </div>
         <div class="col-md-4 wthree_banner_bottom_left">
-          <div class="wthree_banner_bottom_left_grid">
-            <img src="assets/5.jpg" alt=" " class="img-responsive" />
-            <div class="wthree_banner_btm_pos">
-              <h3>introducing <span>best store</span> for <i>groceries</i></h3>
+          <div class="wthree_banner_bottom_left_grid w3l_banner_nav_right_banner3_btml">
+            <div class="view view-tenth">
+              <img src="assets/29.jpg" alt=" " class="img-responsive" />
+              <div class="mask">
+                <h4>Купить мясо для стейков</h4>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+              </div>
             </div>
+            <h4>Мясо для стейков</h4>
+            <ol>
+              <li>enim ipsam voluptatem officia</li>
+              <li>tempora incidunt ut labore et</li>
+              <li>vel eum iure reprehenderit</li>
+            </ol>
           </div>
         </div>
         <div class="col-md-4 wthree_banner_bottom_left">
-          <div class="wthree_banner_bottom_left_grid">
-            <img src="assets/6.jpg" alt=" " class="img-responsive" />
-            <div class="wthree_banner_btm_pos1">
-              <h3>Save <span>Upto</span> $10</h3>
+          <div class="wthree_banner_bottom_left_grid w3l_banner_nav_right_banner3_btml">
+            <div class="view view-tenth">
+              <img src="assets/30.jpg" alt=" " class="img-responsive" />
+              <div class="mask">
+                <h4>Купить мясные наборы</h4>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+              </div>
             </div>
+            <h4>Мясные наборы</h4>
+            <ol>
+              <li>dolorem eum fugiat voluptas</li>
+              <li>ut aliquid ex ea commodi</li>
+              <li>magnam aliquam quaerat</li>
+            </ol>
           </div>
         </div>
         <div class="clearfix"> </div>
@@ -219,158 +107,76 @@
 <!-- top-brands -->
   <div class="top-brands">
     <div class="container">
-      <h3>Hot Offers</h3>
-      <div class="agile_top_brands_grids">
-        <div class="col-md-3 top_brand_left">
+      <h3>Витрина</h3>
+      <% @groups.each  do |group|%>
+      <% products = group.products %>
+      <% unless products[0].nil? %>
+      <div class="w3ls_w3l_banner_nav_right_grid1">
+        <h6><%=group.title%></h6>
+        <% products.each_with_index do |product,index|%>
+        <% break if index >= @max_vitrina  %>
+        <div class="col-md-3 w3ls_w3l_banner_left">
           <div class="hover14 column">
-            <div class="agile_top_brand_left_grid">
-              <div class="tag"><img src="assets/tag.png" alt=" " class="img-responsive" /></div>
-              <div class="agile_top_brand_left_grid1">
-                <figure>
-                  <div class="snipcart-item block" >
-                    <div class="snipcart-thumb">
-                      <a href="single.html"><img title=" " alt=" " src="assets/1.png" /></a>    
-                      <p>fortune sunflower oil</p>
-                      <h4>$7.99 <span>$10.00</span></h4>
-                    </div>
-                    <div class="snipcart-details top_brand_home_details">
-                      <form action="#" method="post">
-                        <fieldset>
-                          <input type="hidden" name="cmd" value="_cart" />
-                          <input type="hidden" name="add" value="1" />
-                          <input type="hidden" name="business" value=" " />
-                          <input type="hidden" name="item_name" value="Fortune Sunflower Oil" />
-                          <input type="hidden" name="amount" value="7.99" />
-                          <input type="hidden" name="discount_amount" value="1.00" />
-                          <input type="hidden" name="currency_code" value="USD" />
-                          <input type="hidden" name="return" value=" " />
-                          <input type="hidden" name="cancel_return" value=" " />
-                          <input type="submit" name="submit" value="Add to cart" class="button" />
-                        </fieldset>
-                      </form>
-                    </div>
-                  </div>
-                </figure>
+          <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
+            <% if product.gift %>
+              <div class="tag">
+                <img src="assets/tag2.png" alt=" " class="img-responsive" />
               </div>
+            <%end%>
+            <% if product.special %>
+            <div class="agile_top_brand_left_grid_pos">
+              <img src="assets/offer2.png" alt=" " class="img-responsive" />
+            </div>
+            <%end%>
+            <div class="agile_top_brand_left_grid1">
+              <figure>
+                <div class="snipcart-item block">
+                  <div class="snipcart-thumb">
+                    <a href="single.html"><%= image_tag product.image.url, :class => "img-responsive"  if product.respond_to? :image %></a>
+                    <p><%=product.title%></p>
+                    <h4><i class="fa fa-rub" aria-hidden="true"></i><%=product.price_new%> <% if product.special %><span><i class="fa fa-rub" aria-hidden="true"></i><%=product.price_old%></span><%end%></h4>
+                  </div>
+                  <div class="snipcart-details">
+                    <!-- В корзину
+                    <form action="#" method="post">
+                      <fieldset>
+                        <input type="hidden" name="cmd" value="_cart" />
+                        <input type="hidden" name="add" value="1" />
+                        <input type="hidden" name="business" value=" " />
+                        <input type="hidden" name="item_name" value="knorr instant soup" />
+                        <input type="hidden" name="amount" value="3.00" />
+                        <input type="hidden" name="discount_amount" value="1.00" />
+                        <input type="hidden" name="currency_code" value="USD" />
+                        <input type="hidden" name="return" value=" " />
+                        <input type="hidden" name="cancel_return" value=" " />
+                        <input type="submit" name="submit" value="Add to cart" class="button" />
+                      </fieldset>
+                    </form>
+                    -->
+                    <input type="submit" name="submit" value="Заказать" class="button" />
+                  </div>
+                </div>
+              </figure>
             </div>
           </div>
-        </div>
-        <div class="col-md-3 top_brand_left">
-          <div class="hover14 column">
-            <div class="agile_top_brand_left_grid">
-              <div class="agile_top_brand_left_grid1">
-                <figure>
-                  <div class="snipcart-item block" >
-                    <div class="snipcart-thumb">
-                      <a href="single.html"><img title=" " alt=" " src="assets/3.png" /></a>    
-                      <p>basmati rise (5 Kg)</p>
-                      <h4>$11.99 <span>$15.00</span></h4>
-                    </div>
-                    <div class="snipcart-details top_brand_home_details">
-                      <form action="#" method="post">
-                        <fieldset>
-                          <input type="hidden" name="cmd" value="_cart" />
-                          <input type="hidden" name="add" value="1" />
-                          <input type="hidden" name="business" value=" " />
-                          <input type="hidden" name="item_name" value="basmati rise" />
-                          <input type="hidden" name="amount" value="11.99" />
-                          <input type="hidden" name="discount_amount" value="1.00" />
-                          <input type="hidden" name="currency_code" value="USD" />
-                          <input type="hidden" name="return" value=" " />
-                          <input type="hidden" name="cancel_return" value=" " />
-                          <input type="submit" name="submit" value="Add to cart" class="button" />
-                        </fieldset>
-                      </form>
-                    </div>
-                  </div>
-                </figure>
-              </div>
-            </div>
           </div>
         </div>
-        <div class="col-md-3 top_brand_left">
-          <div class="hover14 column">
-            <div class="agile_top_brand_left_grid">
-              <div class="agile_top_brand_left_grid_pos">
-                <img src="assets/offer.png" alt=" " class="img-responsive" />
-              </div>
-              <div class="agile_top_brand_left_grid1">
-                <figure>
-                  <div class="snipcart-item block">
-                    <div class="snipcart-thumb">
-                      <a href="single.html"><img src="assets/2.png" alt=" " class="img-responsive" /></a>
-                      <p>Pepsi soft drink (2 Ltr)</p>
-                      <h4>$8.00 <span>$10.00</span></h4>
-                    </div>
-                    <div class="snipcart-details top_brand_home_details">
-                      <form action="#" method="post">
-                        <fieldset>
-                          <input type="hidden" name="cmd" value="_cart" />
-                          <input type="hidden" name="add" value="1" />
-                          <input type="hidden" name="business" value=" " />
-                          <input type="hidden" name="item_name" value="Pepsi soft drink" />
-                          <input type="hidden" name="amount" value="8.00" />
-                          <input type="hidden" name="discount_amount" value="1.00" />
-                          <input type="hidden" name="currency_code" value="USD" />
-                          <input type="hidden" name="return" value=" " />
-                          <input type="hidden" name="cancel_return" value=" " />
-                          <input type="submit" name="submit" value="Add to cart" class="button" />
-                        </fieldset>
-                      </form>
-                    </div>
-                  </div>
-                </figure>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 top_brand_left">
-          <div class="hover14 column">
-            <div class="agile_top_brand_left_grid">
-              <div class="agile_top_brand_left_grid_pos">
-                <img src="assets/offer.png" alt=" " class="img-responsive" />
-              </div>
-              <div class="agile_top_brand_left_grid1">
-                <figure>
-                  <div class="snipcart-item block">
-                    <div class="snipcart-thumb">
-                      <a href="single.html"><img src="assets/4.png" alt=" " class="img-responsive" /></a>
-                      <p>dogs food (4 Kg)</p>
-                      <h4>$9.00 <span>$11.00</span></h4>
-                    </div>
-                    <div class="snipcart-details top_brand_home_details">
-                      <form action="#" method="post">
-                        <fieldset>
-                          <input type="hidden" name="cmd" value="_cart" />
-                          <input type="hidden" name="add" value="1" />
-                          <input type="hidden" name="business" value=" " />
-                          <input type="hidden" name="item_name" value="dogs food" />
-                          <input type="hidden" name="amount" value="9.00" />
-                          <input type="hidden" name="discount_amount" value="1.00" />
-                          <input type="hidden" name="currency_code" value="USD" />
-                          <input type="hidden" name="return" value=" " />
-                          <input type="hidden" name="cancel_return" value=" " />
-                          <input type="submit" name="submit" value="Add to cart" class="button" />
-                        </fieldset>
-                      </form>
-                    </div>
-                  </div>
-                </figure>
-              </div>
-            </div>
-          </div>
-        </div>
+        <%end%>
         <div class="clearfix"> </div>
       </div>
+      <%end%>
+      <%end%>
     </div>
   </div>
 <!-- //top-brands -->
 <!-- fresh-vegetables -->
   <div class="fresh-vegetables">
     <div class="container">
-      <h3>Top Products</h3>
+      <h3>С нами удобно</h3>
       <div class="w3l_fresh_vegetables_grids">
+        <!--
         <div class="col-md-3 w3l_fresh_vegetables_grid w3l_fresh_vegetables_grid_left">
+          
           <div class="w3l_fresh_vegetables_grid2">
             <ul>
               <li><i class="fa fa-check" aria-hidden="true"></i><a href="products.html">All Brands</a></li>
@@ -386,16 +192,17 @@
             </ul>
           </div>
         </div>
-        <div class="col-md-9 w3l_fresh_vegetables_grid_right">
+        -->
+        <div class="col-md-12 w3l_fresh_vegetables_grid_right">
           <div class="col-md-4 w3l_fresh_vegetables_grid">
             <div class="w3l_fresh_vegetables_grid1">
-              <img src="assets/8.jpg" alt=" " class="img-responsive" />
+              <img src="/assets/10000.jpg" alt=" " class="img-responsive" />
             </div>
           </div>
           <div class="col-md-4 w3l_fresh_vegetables_grid">
             <div class="w3l_fresh_vegetables_grid1">
               <div class="w3l_fresh_vegetables_grid1_rel">
-                <img src="assets/7.jpg" alt=" " class="img-responsive" />
+                <img src="/assets/7.jpg" alt=" " class="img-responsive" />
                 <div class="w3l_fresh_vegetables_grid1_rel_pos">
                   <div class="more m1">
                     <a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
@@ -404,18 +211,18 @@
               </div>
             </div>
             <div class="w3l_fresh_vegetables_grid1_bottom">
-              <img src="assets/10.jpg" alt=" " class="img-responsive" />
+              <img src="/assets/10.jpg" alt=" " class="img-responsive" />
               <div class="w3l_fresh_vegetables_grid1_bottom_pos">
-                <h5>Special Offers</h5>
+                <h5>Специальные<br><small>от мясоежка</small> предложения</h5>
               </div>
             </div>
           </div>
           <div class="col-md-4 w3l_fresh_vegetables_grid">
             <div class="w3l_fresh_vegetables_grid1">
-              <img src="assets/9.jpg" alt=" " class="img-responsive" />
+              <img src="/assets/dostavka_free.png" alt=" " class="img-responsive" />
             </div>
             <div class="w3l_fresh_vegetables_grid1_bottom">
-              <img src="assets/11.jpg" alt=" " class="img-responsive" />
+              <img src="/assets/11.jpg" alt=" " class="img-responsive" />
             </div>
           </div>
           <div class="clearfix"> </div>
@@ -450,3 +257,7 @@
     </div>
   </div>
 <!-- //newsletter -->
+
+<!-- ==================
+// // КОНТЕНТ СТРАНИЦЫ
+!! ================== -->

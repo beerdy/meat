@@ -1,0 +1,42 @@
+/* -- Самая верхняя надпись -- */
+.mr_head {
+  color: white;
+  width: 100%;
+  position:absolute;
+}
+.mr_head i {
+  font-size: 1.5em;
+}
+.mr_head p {
+  text-align:center; 
+  vertical-align: middle;
+}
+.mr_head .title-head {
+  height: 45px;
+  display: table;
+}
+.mr_head .p-full-head {
+  display: table-cell;
+}
+.mr_head .p-1080-head {
+  display: none;
+}
+
+@media (max-width: 1080px){
+  .mr_head .p-full-head {
+    display: none;
+  }
+  .mr_head .p-1080-head {
+    display: table-cell;
+  }
+}
+@media (max-width: 768px){
+  .mr_head {
+    display: none;
+  }
+} /* // -- Самая верхняя надпись -- */
+
+/* Fix первого по счету банера */
+
+/* //Fix первого по счету банера */
+

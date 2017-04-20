@@ -126,15 +126,15 @@ input[type="submit"],#PPMiniCart .minicart-submit,.w3ls_vegetables ul li a,input
 .w3l_header_right ul li {
     list-style-type: none;
 }
-.w3l_header_right1{
+.w3l_header_right1 {
 	float:right;
 }
 .w3l_header_right1 h2 a{
 	font-size: .74em;
-    color: #fff;
-    padding: .5em 1.5em;
-    background: #FA1818;
-    display: block;
+  color: #fff;
+  padding: .5em 1.5em;
+  background: #FA1818;
+  display: block;
 	text-decoration:none;
 }
 ul.dropdown-menu.drp-mnu {
@@ -162,17 +162,17 @@ ul.dropdown-menu.drp-mnu li a i {
 	margin-right: 7em;
 }
 .w3ls_logo_products_left h1 a{
-	font-size: 1.5em;
+    font-size: 1em;
     color: #212121;
     text-decoration: none;
     text-transform: uppercase;
     display: block;
-    background: url(/assets/img-sp.png) no-repeat 54px 6px;
+    background: url(/assets/img-sp.png) no-repeat 56px 6px;
     line-height: 1;
-    height: 97px;
+    height: 109px;
 }
 .profile_details_drop a {
-    display: block;
+  display: block;
 	padding-top:1em;
 	font-size:1em;
 	color:#fff;
@@ -180,7 +180,7 @@ ul.dropdown-menu.drp-mnu li a i {
 .w3ls_logo_products_left h1 a span {
     font-size: .3em;
     display: block;
-    color: #FA1818;
+    color: #204710;
 }
 .w3ls_logo_products_left1{
 	float: left;
@@ -304,7 +304,6 @@ ul.dropdown-menu.drp-mnu li a i {
 	margin-bottom: 5em;
 }
 .w3l_banner_nav_right_banner{
-	background:url(/assets/1.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -312,7 +311,6 @@ ul.dropdown-menu.drp-mnu li a i {
 	-ms-background-size:cover;
 }
 .w3l_banner_nav_right_banner1{
-	background:url(/assets/2.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -320,7 +318,6 @@ ul.dropdown-menu.drp-mnu li a i {
 	-ms-background-size:cover;
 }
 .w3l_banner_nav_right_banner2{
-	background:url(/assets/3.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -328,11 +325,11 @@ ul.dropdown-menu.drp-mnu li a i {
 	-ms-background-size:cover;
 }
 .w3l_banner_nav_right_banner h3,.w3l_banner_nav_right_banner1 h3,.w3l_banner_nav_right_banner2 h3{
-	font-size: 2em;
-    color: #fff;
-    font-weight: 300;
-    text-transform: uppercase;
-	margin-bottom: 1em;
+  font-size: 2em;
+  color: #fff;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 1em;
 }
 .w3l_banner_nav_right_banner h3 span,.w3l_banner_nav_right_banner1 h3 span{
 	display:block;
@@ -738,12 +735,12 @@ ul.dropdown-menu.drp-mnu li a i {
 	font-size: 1.3em;
     color: #fff;
     font-weight: 600;
-    width: 100px;
-    height: 100px;
+    width: 170px;
+    height: 170px;
     text-align: center;
     background: #FA1818;
     border-radius: 50%;
-    padding: 1.1em 0 0;
+    padding: 2.3em 0 0;
     line-height: 1.3em;
 }
 .agileinfo_breaking_news {
@@ -2554,8 +2551,8 @@ ul.wmuSliderPagination {
 	}
 	.w3l_fresh_vegetables_grid1_bottom_pos h5 {
 		font-size: 1.1em;
-		width: 85px;
-		height: 85px;
+		width: 140px;
+		height: 140px;
 	}
 	.w3l_banner_nav_right_banner3 h3, .w3l_banner_nav_right_banner4 h3, .w3l_banner_nav_right_banner5 h3, .w3l_banner_nav_right_banner6 h3, .w3l_banner_nav_right_banner7 h3, .w3l_banner_nav_right_banner8 h3, .w3l_banner_nav_right_banner9 h3, .w3l_banner_nav_right_banner10 h3 {
 		font-size: 1.7em;
@@ -2689,10 +2686,13 @@ ul.wmuSliderPagination {
 	.w3l_search {
 		margin: .1em 0 0em 2em;
 	}
+  .w3ls_logo_products_left img {
+    height: 40px;
+  }
 	.w3ls_logo_products_left h1 a {
 		font-size: 1.2em;
-		background: url(/assets/img-sp.png) no-repeat 38px -9px;
-		height: 83px;
+		background: url(/assets/img-sp.png) no-repeat 38px 4px;
+		height: 97px;
 	}
 	.w3ls_logo_products_left1 ul.phone_email li {
 		margin-right: 1em;
@@ -2993,10 +2993,13 @@ ul.wmuSliderPagination {
 		font-size: .6em;
 		padding:.75em 1em;
 	}
+  .w3ls_logo_products_left img {
+    height: 40px;
+  }
 	.w3ls_logo_products_left h1 a {
 		font-size: 1em;
-		background: url(/assets/img-sp.png) no-repeat 28px -17px;
-		height: 74px;
+		background: url(/assets/img-sp.png) no-repeat 38px -2px;
+		height: 94px;
 	}
 	.w3ls_logo_products_left1 {
 		margin-top: 1.6em;
@@ -3106,8 +3109,8 @@ ul.wmuSliderPagination {
 	}
 	.w3ls_logo_products_left h1 a {
 		font-size: 1.2em;
-		background: url(/assets/img-sp.png) no-repeat 38px -8px;
-		height: 85px;
+		background: url(/assets/img-sp.png) no-repeat 38px 3px;
+		height: 95px;
 	}
 	ul.dropdown-menu.drp-mnu {
 		top: 130%;
@@ -3455,8 +3458,8 @@ ul.wmuSliderPagination {
 	}
 	.w3ls_logo_products_left h1 a {
 		font-size: 1em;
-		background: url(/assets/img-sp.png) no-repeat 28px -18px;
-		height: 75px;
+		background: url(/assets/img-sp.png) no-repeat 38px -2px;
+		height: 95px;
 	}
 	.w3ls_logo_products_left1 ul.special_items li i {
 		padding: 0 0.5em;
@@ -4104,8 +4107,8 @@ ul.wmuSliderPagination {
 	}
 	.w3l_fresh_vegetables_grid1_bottom_pos h5 {
 		font-size: 1em;
-		width: 80px;
-		height: 80px;
+		width: 120px;
+		height: 120px;
 		padding: 1.2em 0 0;
 	}
 	.w3agile_newsletter_right input[type="email"] {

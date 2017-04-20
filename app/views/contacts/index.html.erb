@@ -1,0 +1,54 @@
+
+<!-- page_ident идет после header -->
+<% content_for :page_ident do %>
+  <!-- products-breadcrumb -->
+  <div class="products-breadcrumb">
+    <div class="container">
+      <ul>
+        <li><i class="fa fa-home" aria-hidden="true"></i><a href="/">На главную</a><span>|</span></li>
+        <li>Обратная связь</li>
+      </ul>
+    </div>
+  </div><!-- //products-breadcrumb -->
+<%end%><!-- //page_ident идет после header -->
+
+<% content_for :page_head do %>
+<!-- mail -->
+    <div class="mail">
+      <h3>Свяжитесь с нами</h3>
+      <div class="agileinfo_mail_grids">
+        <div class="col-md-4 agileinfo_mail_grid_left">
+          <ul>
+            <li><i class="fa fa-home" aria-hidden="true"></i></li>
+            <li>Адрес<span><%=@adress.html_safe%></span></li>
+          </ul>
+          <ul>
+            <li><i class="fa fa-envelope" aria-hidden="true"></i></li>
+            <li>E-mail<span><a href="mailto:info@example.com"><%=@email.html_safe%></a></span></li>
+          </ul>
+          <ul>
+            <li><i class="fa fa-phone" aria-hidden="true"></i></li>
+            <li>Контакты<span><%=@phone.html_safe%></span></li>
+          </ul>
+        </div>
+        <div class="col-md-8 agileinfo_mail_grid_right">
+          <%= form_for(@contact) do |f| %>
+            <div class="col-md-6 wthree_contact_left_grid">
+              <input type="text" name="contact[name]" value="Как к Вам обращаться*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Как к Вам обращаться*';}" required="">
+              <input type="email" name="contact[email]" value="Email*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email*';}" required="">
+            </div>
+            <div class="col-md-6 wthree_contact_left_grid">
+              <input type="text" name="contact[phone]" value="Телефон*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Телефон*';}" required="">
+              <input type="text" name="contact[description]" value="Тема обращения*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Тема обращения*';}" required="">
+            </div>
+            <div class="clearfix"> </div>
+            <textarea  name="contact[slave]" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Введите сообщение...';}" required="">Введите сообщение...</textarea>
+            <input type="submit" value="Отправить">
+            <input type="reset" value="Очистить">
+          <%end%>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+    </div>
+<!-- //mail -->
+<% end %>

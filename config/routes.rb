@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :products
+  resources :sliders
+  resources :contacts
   resources :facts
   mount Rich::Engine => '/rich', :as => 'rich'
   get 'about/index'

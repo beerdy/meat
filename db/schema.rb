@@ -11,13 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170401154450) do
+ActiveRecord::Schema.define(version: 20170420083738) do
 
   create_table "catalogs", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.text     "slave"
     t.string   "image_uid"
+    t.string   "image_name"
+    t.string   "url"
+    t.integer  "sort"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "image_uid"
+    t.string   "description"
+    t.text     "slave"
     t.string   "image_name"
     t.string   "url"
     t.integer  "sort"
@@ -97,6 +111,25 @@ ActiveRecord::Schema.define(version: 20170401154450) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "products", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "slave"
+    t.integer  "price_old"
+    t.integer  "price_new"
+    t.string   "image_uid"
+    t.string   "image_name"
+    t.string   "url"
+    t.integer  "sort"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "group_id"
+    t.boolean  "special",     default: false
+    t.boolean  "gift",        default: false
+  end
+
+  add_index "products", ["group_id"], name: "index_products_on_group_id"
+
   create_table "rich_rich_files", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -108,6 +141,18 @@ ActiveRecord::Schema.define(version: 20170401154450) do
     t.integer  "owner_id"
     t.text     "uri_cache"
     t.string   "simplified_type",        default: "file"
+  end
+
+  create_table "sliders", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "slave"
+    t.string   "image_uid"
+    t.string   "image_name"
+    t.string   "url"
+    t.integer  "sort"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "teams", force: :cascade do |t|
