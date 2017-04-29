@@ -1,0 +1,66 @@
+
+<!-- page_ident идет после header -->
+<% content_for :page_ident do %>
+  <!-- products-breadcrumb -->
+  <div class="products-breadcrumb">
+    <div class="container">
+      <ul>
+        <li><i class="fa fa-home" aria-hidden="true"></i><a href="/">На главную</a><span>|</span></li>
+        <li><%=@page.title%></li>
+      </ul>
+    </div>
+  </div><!-- //products-breadcrumb -->
+<%end%><!-- //page_ident идет после header -->
+
+<% content_for :page_head do %>
+  <!-- services -->
+  <div class="services">
+    <h3><%=@page.title%></h3>
+    <div class="w3ls_service_grids">
+      <div class="col-md-5 w3ls_service_grid_left">
+        <h4>Воспользуйся спецпредложением!</h4>
+        <div class="y-offset"></div>
+        <p>Условия спецпредложения! Тестк условий текст! Тестк условий текст! Тестк условий текст! Тестк условий текст
+        ! Тестк условий текст! Тестк условий текст! Тестк условий текст! Тестк условий текст! Тестк условий текст! Тестк условий текст</p>
+        <img src="/assets/4.jpg" alt=" " class="img-responsive" />
+      </div>
+      <div class="col-md-7 w3ls_service_grid_left">
+        <%=@page.description.html_safe%>
+      
+      </div>
+      
+    </div>
+  </div>
+  <!-- //services -->
+<%end%>
+
+<div class="services">
+  <h3>Средняя цена, сегодня</h3>
+</div>
+
+<!-- services-bottom -->
+  <table class="services-bottom">
+    <tr class="container">
+      <% Group.all.sort_by(&:sort).each do |group| %>
+      <td class="about_counter_left" align="center" valign="middle">
+        <div><%= image_tag group.image.url, alt: group.title, class: 'img-responsive' if group.image_stored? %></div>
+        <p class="counter"><%=group.average%></p> <strong><i class="fa fa-rub" aria-hidden="true"></i>
+</strong>
+        <h3><%=group.title%></h3>
+      </td>
+      <%end%>
+      <!-- Stats-Number-Scroller-Animation-JavaScript -->
+        <script src="js/waypoints.min.js"></script> 
+        <script src="js/counterup.min.js"></script> 
+        <script>
+          jQuery(document).ready(function( $ ) {
+            $('.counter').counterUp({
+              delay: 10,
+              time: 100
+            });
+          });
+        </script>
+      <!-- //Stats-Number-Scroller-Animation-JavaScript -->
+    </tr>
+  </table>
+  <!-- //services-bottom -->

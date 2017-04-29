@@ -44,62 +44,26 @@
 <!-- ==================
 - - - - КОНТЕНТ СТРАНИЦЫ
 !! ================== -->
-  <div class="banner_bottom">
+  <div class="banner_bottom mr_vitrina_container">
 
       <div class="wthree_banner_bottom_left_grid_sub">
       </div>
       <div class="wthree_banner_bottom_left_grid_sub1">
+        <% @info_head.sort.each do |key,meat| %>
         <div class="col-md-4 wthree_banner_bottom_left">
           <div class="wthree_banner_bottom_left_grid w3l_banner_nav_right_banner3_btml">
             <div class="view view-tenth">
-              <img src="assets/24.jpg" alt=" " class="img-responsive">
+              <%= image_tag meat.image.url, alt: meat.title, class: 'img-responsive' %>
               <div class="mask">
-                <h4>Купить мясо для шашлыка</h4>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+                <h4><%= meat.title %></h4>
+                <p><%= meat.slave %></p>
               </div>
             </div>
-            <h4>Мясо для шашлыка</h4>
-            <ol>
-              <li>sunt in culpa qui officia</li>
-              <li>commodo consequat</li>
-              <li>sed do eiusmod tempor incididunt</li>
-            </ol>
+            <h4><%= meat.title %></h4>
+            <%= meat.description.html_safe %>
           </div>
         </div>
-        <div class="col-md-4 wthree_banner_bottom_left">
-          <div class="wthree_banner_bottom_left_grid w3l_banner_nav_right_banner3_btml">
-            <div class="view view-tenth">
-              <img src="assets/29.jpg" alt=" " class="img-responsive" />
-              <div class="mask">
-                <h4>Купить мясо для стейков</h4>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
-              </div>
-            </div>
-            <h4>Мясо для стейков</h4>
-            <ol>
-              <li>enim ipsam voluptatem officia</li>
-              <li>tempora incidunt ut labore et</li>
-              <li>vel eum iure reprehenderit</li>
-            </ol>
-          </div>
-        </div>
-        <div class="col-md-4 wthree_banner_bottom_left">
-          <div class="wthree_banner_bottom_left_grid w3l_banner_nav_right_banner3_btml">
-            <div class="view view-tenth">
-              <img src="assets/30.jpg" alt=" " class="img-responsive" />
-              <div class="mask">
-                <h4>Купить мясные наборы</h4>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
-              </div>
-            </div>
-            <h4>Мясные наборы</h4>
-            <ol>
-              <li>dolorem eum fugiat voluptas</li>
-              <li>ut aliquid ex ea commodi</li>
-              <li>magnam aliquam quaerat</li>
-            </ol>
-          </div>
-        </div>
+        <%end%>
         <div class="clearfix"> </div>
       </div>
       <div class="clearfix"> </div>
@@ -107,65 +71,16 @@
 <!-- top-brands -->
   <div class="top-brands">
     <div class="container">
-      <h3>Витрина</h3>
-      <% @groups.each  do |group|%>
-      <% products = group.products %>
-      <% unless products[0].nil? %>
-      <div class="w3ls_w3l_banner_nav_right_grid1">
-        <h6><%=group.title%></h6>
-        <% products.each_with_index do |product,index|%>
-        <% break if index >= @max_vitrina  %>
-        <div class="col-md-3 w3ls_w3l_banner_left">
-          <div class="hover14 column">
-          <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-            <% if product.gift %>
-              <div class="tag">
-                <img src="assets/tag2.png" alt=" " class="img-responsive" />
-              </div>
-            <%end%>
-            <% if product.special %>
-            <div class="agile_top_brand_left_grid_pos">
-              <img src="assets/offer2.png" alt=" " class="img-responsive" />
-            </div>
-            <%end%>
-            <div class="agile_top_brand_left_grid1">
-              <figure>
-                <div class="snipcart-item block">
-                  <div class="snipcart-thumb">
-                    <a href="single.html"><%= image_tag product.image.url, :class => "img-responsive"  if product.respond_to? :image %></a>
-                    <p><%=product.title%></p>
-                    <h4><i class="fa fa-rub" aria-hidden="true"></i><%=product.price_new%> <% if product.special %><span><i class="fa fa-rub" aria-hidden="true"></i><%=product.price_old%></span><%end%></h4>
-                  </div>
-                  <div class="snipcart-details">
-                    <!-- В корзину
-                    <form action="#" method="post">
-                      <fieldset>
-                        <input type="hidden" name="cmd" value="_cart" />
-                        <input type="hidden" name="add" value="1" />
-                        <input type="hidden" name="business" value=" " />
-                        <input type="hidden" name="item_name" value="knorr instant soup" />
-                        <input type="hidden" name="amount" value="3.00" />
-                        <input type="hidden" name="discount_amount" value="1.00" />
-                        <input type="hidden" name="currency_code" value="USD" />
-                        <input type="hidden" name="return" value=" " />
-                        <input type="hidden" name="cancel_return" value=" " />
-                        <input type="submit" name="submit" value="Add to cart" class="button" />
-                      </fieldset>
-                    </form>
-                    -->
-                    <input type="submit" name="submit" value="Заказать" class="button" />
-                  </div>
-                </div>
-              </figure>
-            </div>
-          </div>
-          </div>
-        </div>
+      <div class="row">
+        <h3>Витрина</h3>
+        <% @count = 0; @groups.each do |group| %>
+        <%= @count>=6? (@count=0;'</div><div class="row mr_up_row">'.html_safe) : (@count+=1;'') %>
+        <a class="col-md-2 about_counter_left" style="text-align: center">
+          <h4><%=group.title%></h4>
+          <div style="display: inline-block;"><%= image_tag group.image.url, alt: group.title, class: 'img-responsive' if group.image_stored? %></div>
+        </a>
         <%end%>
-        <div class="clearfix"> </div>
       </div>
-      <%end%>
-      <%end%>
     </div>
   </div>
 <!-- //top-brands -->
@@ -196,33 +111,39 @@
         <div class="col-md-12 w3l_fresh_vegetables_grid_right">
           <div class="col-md-4 w3l_fresh_vegetables_grid">
             <div class="w3l_fresh_vegetables_grid1">
-              <img src="/assets/10000.jpg" alt=" " class="img-responsive" />
+              <%= image_tag @info_big.image.url, alt: @info_big.title, class: 'img-responsive' %>
             </div>
           </div>
           <div class="col-md-4 w3l_fresh_vegetables_grid">
             <div class="w3l_fresh_vegetables_grid1">
               <div class="w3l_fresh_vegetables_grid1_rel">
-                <img src="/assets/7.jpg" alt=" " class="img-responsive" />
+                <%= image_tag @info_small_1.image.url, alt: @info_small_1.title, class: 'img-responsive' %>
+                <div class="mr_vegetables_grid1_bottom_pos">
+                  <%= @info_small_1.description.html_safe %>
+                </div>
                 <div class="w3l_fresh_vegetables_grid1_rel_pos">
                   <div class="more m1">
-                    <a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
+                    <a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Заправься">Заправься</a>
                   </div>
                 </div>
               </div>
             </div>
             <div class="w3l_fresh_vegetables_grid1_bottom">
-              <img src="/assets/10.jpg" alt=" " class="img-responsive" />
+              <%= image_tag @info_small_2.image.url, alt: @info_small_2.title, class: 'img-responsive' %>
               <div class="w3l_fresh_vegetables_grid1_bottom_pos">
-                <h5>Специальные<br><small>от мясоежка</small> предложения</h5>
+                <%= @info_small_2.description.html_safe %>
               </div>
             </div>
           </div>
           <div class="col-md-4 w3l_fresh_vegetables_grid">
             <div class="w3l_fresh_vegetables_grid1">
-              <img src="/assets/dostavka_free.png" alt=" " class="img-responsive" />
+              <%= image_tag @info_small_3.image.url, alt: @info_small_3.title, class: 'img-responsive' %>
+              <div class="mr_vegetables_grid1_bottom_pos">
+                <%= @info_small_3.description.html_safe %>
+              </div>
             </div>
             <div class="w3l_fresh_vegetables_grid1_bottom">
-              <img src="/assets/11.jpg" alt=" " class="img-responsive" />
+              <%= image_tag @info_small_4.image.url, alt: @info_small_4.title, class: 'img-responsive' %>
             </div>
           </div>
           <div class="clearfix"> </div>

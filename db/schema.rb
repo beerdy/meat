@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170420083738) do
+ActiveRecord::Schema.define(version: 20170427092739) do
 
   create_table "catalogs", force: :cascade do |t|
     t.string   "title"
@@ -85,6 +85,20 @@ ActiveRecord::Schema.define(version: 20170420083738) do
     t.integer  "sort"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "average"
+  end
+
+  create_table "infos", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "slave"
+    t.string   "image_uid"
+    t.string   "image_name"
+    t.string   "url"
+    t.integer  "sort"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "group"
   end
 
   create_table "pages", force: :cascade do |t|
@@ -126,6 +140,9 @@ ActiveRecord::Schema.define(version: 20170420083738) do
     t.integer  "group_id"
     t.boolean  "special",     default: false
     t.boolean  "gift",        default: false
+    t.boolean  "stake"
+    t.boolean  "barbecue"
+    t.boolean  "set"
   end
 
   add_index "products", ["group_id"], name: "index_products_on_group_id"

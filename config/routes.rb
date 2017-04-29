@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'service/index'
+
+  resources :infos
   resources :products
   resources :sliders
   resources :contacts
