@@ -35,6 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails_admin', '~> 1.0'
 gem 'dragonfly', '~> 1.1.1'
 gem 'font-awesome-sass'
+gem 'russian', '~> 0.6.0'
 
 gem 'rich', github: 'bastiaanterhorst/rich'
 gem 'paperclip'

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @special.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @special.description %>
+</p>
+
+<p>
+  <strong>Slave:</strong>
+  <%= @special.slave %>
+</p>
+
+<p>
+  <strong>Image uid:</strong>
+  <%= @special.image_uid %>
+</p>
+
+<p>
+  <strong>Image name:</strong>
+  <%= @special.image_name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @special.url %>
+</p>
+
+<p>
+  <strong>Sort:</strong>
+  <%= @special.sort %>
+</p>
+
+<%= link_to 'Edit', edit_special_path(@special) %> |
+<%= link_to 'Back', specials_path %>

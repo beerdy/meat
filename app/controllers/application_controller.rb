@@ -27,11 +27,14 @@ private
 
       # footer block
       @info_big = info if info.group == 'info_big'
+      
       @info_small_1 = info if info.group == 'info_small_1'
       @info_small_2 = info if info.group == 'info_small_2'
       @info_small_3 = info if info.group == 'info_small_3'
       @info_small_4 = info if info.group == 'info_small_4'
-
+      
+      @special_for_special = info if info.group == 'special_for_special'
+      @special_for_delivery = info if info.group == 'special_for_delivery'
     end
   end
 end

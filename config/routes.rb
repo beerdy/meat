@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :specials
+  get 'special/index'
+
   get 'service/index'
 
   resources :infos

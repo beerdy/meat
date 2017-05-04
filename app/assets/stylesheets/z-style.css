@@ -126,3 +126,30 @@
   }
 } 
 /* // -- Витрина главная -- */
+
+/* -- Спецпредложения -- */
+.special {
+  top: 0px;
+  margin-top: -70px;
+}
+@media (max-width: 768px){
+  .special {
+    top: 0px;
+    margin-top: 0px;
+  }
+}
+
+.events_bottom_left1_grid div {
+  position: absolute;
+  margin: 0 0 0 3px;
+  padding: 0;
+}
+
+.alert-success {
+  width: 100%;
+}
+.alert-success i {
+  color: #FA1822;
+}
+/* //-- Спецпредложения -- */
+
