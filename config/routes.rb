@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'documents/index'
+
   resources :specials
   get 'special/index'
 
