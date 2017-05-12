@@ -49,9 +49,9 @@
       <div class="wthree_banner_bottom_left_grid_sub">
       </div>
       <div class="wthree_banner_bottom_left_grid_sub1">
-        <% @info_head.sort.each do |key,meat| %>
+        <% @info_head_sort.sort.each do |key,meat| %>
         <div class="col-md-4 wthree_banner_bottom_left">
-          <div class="wthree_banner_bottom_left_grid w3l_banner_nav_right_banner3_btml">
+          <a href="/<%= meat.url %>/index" class="wthree_banner_bottom_left_grid w3l_banner_nav_right_banner3_btml">
             <div class="view view-tenth">
               <%= image_tag meat.image.url, alt: meat.title, class: 'img-responsive' %>
               <div class="mask">
@@ -61,7 +61,7 @@
             </div>
             <h4><%= meat.title %></h4>
             <%= meat.description.html_safe %>
-          </div>
+          </a>
         </div>
         <%end%>
         <div class="clearfix"> </div>
@@ -71,12 +71,12 @@
 <!-- top-brands -->
   <div class="top-brands">
     <div class="container">
+      <h3>Витрина</h3>
       <div class="row">
-        <h3>Витрина</h3>
         <% @count = 0; @groups.each do |group| %>
         <%= @count>=6? (@count=0;'</div><div class="row mr_up_row">'.html_safe) : (@count+=1;'') %>
         <a class="col-md-2 about_counter_left" style="text-align: center">
-          <h4><%=group.title%></h4>
+          <span><%=group.title%></span>
           <div style="display: inline-block;"><%= image_tag group.image.url, alt: group.title, class: 'img-responsive' if group.image_stored? %></div>
         </a>
         <%end%>
@@ -149,7 +149,7 @@
           <div class="clearfix"> </div>
           <div class="agileinfo_move_text">
             <div class="agileinfo_marquee">
-              <h4>get <span class="blink_me">25% off</span> on first order and also get gift voucher</h4>
+              <h4>Получи свои <span class="blink_me">15% скидки</span> заказав в магазине мяса «МЯСОЕЖКА»</h4>
             </div>
             <div class="agileinfo_breaking_news">
               <span> </span>
@@ -162,23 +162,7 @@
     </div>
   </div>
 <!-- //fresh-vegetables -->
-<!-- newsletter -->
-  <div class="newsletter">
-    <div class="container">
-      <div class="w3agile_newsletter_left">
-        <h3>sign up for our newsletter</h3>
-      </div>
-      <div class="w3agile_newsletter_right">
-        <form action="#" method="post">
-          <input type="email" name="Email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-          <input type="submit" value="subscribe now">
-        </form>
-      </div>
-      <div class="clearfix"> </div>
-    </div>
-  </div>
-<!-- //newsletter -->
-
+<%=@sub%>
 <!-- ==================
 // // КОНТЕНТ СТРАНИЦЫ
 !! ================== -->

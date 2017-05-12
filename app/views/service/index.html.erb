@@ -18,17 +18,14 @@
     <h3><%=@page.title%></h3>
     <div class="w3ls_service_grids">
       <div class="col-md-5 w3ls_service_grid_left">
-        <h4>Воспользуйся спецпредложением!</h4>
+        <h4><%=@special_for_delivery.title%></h4>
         <div class="y-offset"></div>
-        <p>Условия спецпредложения! Тестк условий текст! Тестк условий текст! Тестк условий текст! Тестк условий текст
-        ! Тестк условий текст! Тестк условий текст! Тестк условий текст! Тестк условий текст! Тестк условий текст! Тестк условий текст</p>
-        <img src="/assets/4.jpg" alt=" " class="img-responsive" />
+        <p><%=@special_for_delivery.description.html_safe%></p>
+        <%= image_tag @special_for_delivery.image.url, alt: @special_for_delivery.title, class: 'img-responsive' if @special_for_delivery.image_stored? %>
       </div>
       <div class="col-md-7 w3ls_service_grid_left">
         <%=@page.description.html_safe%>
-      
       </div>
-      
     </div>
   </div>
   <!-- //services -->
@@ -41,7 +38,7 @@
 <!-- services-bottom -->
   <table class="services-bottom">
     <tr class="container">
-      <% Group.all.sort_by(&:sort).each do |group| %>
+      <% @groups.each do |group| %>
       <td class="about_counter_left" align="center" valign="middle">
         <div><%= image_tag group.image.url, alt: group.title, class: 'img-responsive' if group.image_stored? %></div>
         <p class="counter"><%=group.average%></p> <strong><i class="fa fa-rub" aria-hidden="true"></i>

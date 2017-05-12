@@ -4,11 +4,18 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   def initialize
     super
+    @max_vitrina = 4
+
+    
 
     @info = Info.all
     @contents = Content.all
+    @groups_all = Group.all.sort_by(&:sort)
+
+    @sub = @contents[4].description.html_safe
 
     get_info_block
+    get_groups
 
     #adress, #phone, #email
     eval(@contents[0].description)
@@ -18,12 +25,15 @@ class ApplicationController < ActionController::Base
 private
   def get_info_block
     
-    @info_head , @info_footer = {}, {}
+    @info_head_sort, @info_head_url, @info_footer = {}, {}, {}
     
     @info.each do |info|
 
       # header block
-      @info_head[info.sort] = info if info.group == 'info_head'
+      if info.group == 'info_head'
+        @info_head_sort[info.sort] = info
+        @info_head_url[info.url] = info
+      end
 
       # footer block
       @info_big = info if info.group == 'info_big'
@@ -36,5 +46,19 @@ private
       @special_for_special = info if info.group == 'special_for_special'
       @special_for_delivery = info if info.group == 'special_for_delivery'
     end
+  end
+  def get_groups
+    @groups, @groups_second = [],[]
+
+    @groups_all.each do |group|
+
+      if group.master == true
+        @groups.push group
+      else
+        @groups_second.push group
+      end
+
+    end 
+
   end
 end

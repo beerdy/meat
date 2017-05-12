@@ -1,0 +1,25 @@
+<!-- page_ident идет после header -->
+<% content_for :page_ident do %>
+  <!-- products-breadcrumb -->
+  <div class="products-breadcrumb">
+    <div class="container">
+      <ul>
+        <li><i class="fa fa-home" aria-hidden="true"></i><a href="/">На главную</a><span>|</span></li>
+        <li><%=@page.title%></li>
+      </ul>
+    </div>
+  </div><!-- //products-breadcrumb -->
+<%end%><!-- //page_ident идет после header -->
+
+<% content_for :page_head do %>
+  <!-- services -->
+  <div class="services <%=@page.url%>">
+    <h3><%=@page.title%></h3>
+    <div class="w3ls_service_grids">
+      <%=@page.description.html_safe%>
+
+      <div class="clearfix"> </div>
+    </div>
+  </div>
+  <!-- //services -->
+<%end%>

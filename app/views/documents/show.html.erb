@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @document.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @document.description %>
+</p>
+
+<p>
+  <strong>Slave:</strong>
+  <%= @document.slave %>
+</p>
+
+<p>
+  <strong>Image uid:</strong>
+  <%= @document.image_uid %>
+</p>
+
+<p>
+  <strong>Image name:</strong>
+  <%= @document.image_name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @document.url %>
+</p>
+
+<p>
+  <strong>Sort:</strong>
+  <%= @document.sort %>
+</p>
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>

@@ -86,14 +86,14 @@
         <ul class="special_items">
           <li><a href="/">Главная</a><i>/</i></li>
           <li><a href="/about/index">О магазине</a><i>/</i></li>
-          <li><a href="/documents/index">Сертификаты и документы</a><i>/</i></li>
+          <li><a href="/documents">Сертификаты и документы</a><i>/</i></li>
           <li><a href="/service/index">Доставка</a></li>
         </ul>
       </div>
       <div class="w3ls_logo_products_left1">
         <ul class="phone_email">
           <li><i class="fa fa-phone" aria-hidden="true"></i><%=@phone%></li>
-          <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:store@grocery.com"><%=@email%></a></li>
+          <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:<%=@email%>"><%=@email%></a></li>
         </ul>
       </div>
       <div class="clearfix"> </div>
@@ -115,7 +115,32 @@
           <span class="icon-bar"></span>
           </button>
          </div> 
+         
          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+            <ul class="nav navbar-nav nav_1">
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Всяко - Разно <span class="caret"></span></a>
+              <div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
+                <div class="w3ls_vegetables">
+                  <ul>
+                    <li></li>
+                    <% @groups_second.each do |group| %>
+                    <li><a href="/groups/<%=group.id%>?type=second"><%=group.title%></a></li>
+                    <%end%>
+                  </ul>
+                </div>                  
+              </div>        
+              </li>
+              <% @info_head_sort.sort.each do |key,meat| %>
+              <li class="set-meat-li"><a href="/<%= meat.url %>/index"><%= meat.title %></a></li>
+              <%end%>
+              <% @groups.each  do |group|%>
+              <li><%= link_to group.title, group_path(group) %></li>
+              <%end%>
+            </ul>
+          </div>
+         <!-- original menu
         <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
           <ul class="nav navbar-nav nav_1">
             <li><a href="products.html">Branded Foods</a></li>
@@ -159,6 +184,7 @@
             <li><a href="bread.html">Bread & Bakery</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
+
       </nav>
     </div>
     <!-- //Боковое меню везде-->

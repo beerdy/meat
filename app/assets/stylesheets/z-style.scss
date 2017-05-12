@@ -2,13 +2,14 @@
 .mr_head {
   color: white;
   width: 100%;
-  position:absolute;
+  position: absolute;
 }
+
 .mr_head i {
   font-size: 1.5em;
 }
 .mr_head p {
-  text-align:center; 
+  text-align: center; 
   vertical-align: middle;
 }
 .mr_head .title-head {
@@ -37,25 +38,25 @@
 } /* // -- Самая верхняя надпись -- */
 
 /* Приправы оврщи соки */
-  .mr_vegetables_grid1_bottom_pos {
-    position: absolute;
-    top: 0;
-    margin: 10px 0 0 10px;
-  }
-  .mr_vegetables_grid1_bottom_pos p {
-    text-shadow: -4px -4px 2px rgba(195, 207, 218, 1);
-    text-align: center;
-    font-size: 1.3em !important;
-    color:orange;
-    font-weight: bold;
-    text-transform:uppercase;
-  }
-  .mr_vegetables_grid1_bottom_pos span {
-    color: green;
-  }
-  .mr_vegetables_grid1_bottom_pos small {
-    color: red;
-  }
+.mr_vegetables_grid1_bottom_pos {
+  position: absolute;
+  top: 0;
+  margin: 10px 0 0 10px;
+}
+.mr_vegetables_grid1_bottom_pos p {
+  text-shadow: -4px -4px 2px rgba(195, 207, 218, 1);
+  text-align: center;
+  font-size: 1.3em !important;
+  color: orange;
+  font-weight: bold;
+  text-transform:uppercase;
+}
+.mr_vegetables_grid1_bottom_pos span {
+  color: green;
+}
+.mr_vegetables_grid1_bottom_pos small {
+  color: red;
+}
 /* //Fix первого по счету банера */
 
 /* Доставка */
@@ -68,15 +69,27 @@
   font-family: FontAwesome !important;
 
 }
-.w3ls_service_grid_left .y-offset {
-
+.w3ls_service_grid_left span {
+  color: red;
+}
+.w3ls_service_grid_left strong {
+  text-transform: uppercase;
+  color: black;
 }
 /* //Доставка */
 
 
-/* -- Витрина главная -- */
+/* -- Витрина -- */
+.vitrina {
+  margin: 30px auto 30px 0px !important;
+  background-image: none !important;
+  padding: 0 !important;
+}
 .top-brands {
   background: url(/assets/backfon.jpg);
+}
+.top-brands-vitrina {
+  padding: 0px 0px 50px 0px !important;
 }
 .top-brands .col-md-2 {
   margin-top: 1.2em;
@@ -105,6 +118,12 @@
 .top-brands img {
   margin-left: 20%;
 }
+.about_counter_left span {
+  display: block;
+  width: 100%;
+  height: 40px;
+  font-weight: bold;
+}
 @media (max-width: 1080px){
   .top-brands h4 {
     font-size: 1.2em;
@@ -121,11 +140,11 @@
   }
 }
 @media (max-width: 320px){
-   .top-brands h4 {
+  .top-brands h4 {
     font-size: 13px;
   }
 } 
-/* // -- Витрина главная -- */
+/* // -- Витрина -- */
 
 /* -- Спецпредложения -- */
 .special {
@@ -153,3 +172,56 @@
 }
 /* //-- Спецпредложения -- */
 
+/* -- Боковое меню -- */
+#bs-megadropdown-tabs .set-meat-li {
+  background-color: #F9EAB0;
+}
+.w3ls_vegetables li {
+  white-space: nowrap;
+  padding-bottom: 7px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.w3ls_vegetables li a:before {
+  color: #97D13F;
+  content: "\f178";
+  font-family: FontAwesome;
+}
+/* // -- Боковое меню -- */
+
+/* -- Фермеры и бизнес -- */
+.farmers, .business, .job {
+  .text-center {
+    color: orange;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  img {
+    border-radius: 4px;
+    border: 1px solid #F5F5F5;
+  }
+  b {
+    color: #E22623;
+  }
+  .well {
+    margin-top: 20px;
+  }
+  small {
+    text-decoration: underline;
+  }
+  .fa {
+    color: #E22623;
+  }
+  .w3ls_service_grid_left {
+    margin-bottom: 50px;
+  }
+  li {
+    list-style: none;
+  }
+  li:before {
+    color: #97D13F;
+    content: "\f178\00a0" !important;
+    font-family: FontAwesome !important;
+  }
+}
+/* // -- Фермеры-- */

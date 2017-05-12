@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170504134613) do
+ActiveRecord::Schema.define(version: 20170512145836) do
 
   create_table "catalogs", force: :cascade do |t|
     t.string   "title"
@@ -23,7 +23,17 @@ ActiveRecord::Schema.define(version: 20170504134613) do
     t.integer  "sort"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "group_id"
+    t.integer  "price_old"
+    t.integer  "price_new"
+    t.boolean  "special"
+    t.boolean  "gift"
+    t.boolean  "stake"
+    t.boolean  "barbecue"
+    t.boolean  "set"
   end
+
+  add_index "catalogs", ["group_id"], name: "index_catalogs_on_group_id"
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name"
@@ -40,6 +50,18 @@ ActiveRecord::Schema.define(version: 20170504134613) do
   end
 
   create_table "contents", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "slave"
+    t.string   "image_uid"
+    t.string   "image_name"
+    t.string   "url"
+    t.integer  "sort"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "documents", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.text     "slave"
@@ -86,6 +108,7 @@ ActiveRecord::Schema.define(version: 20170504134613) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "average"
+    t.boolean  "master"
   end
 
   create_table "infos", force: :cascade do |t|

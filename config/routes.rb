@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
-  get 'documents/index'
+  get 'farmers/index'
 
+  get 'job/index'
+
+  get 'business/index'
+
+  get 'set/index'
+
+  get 'barbecue/index'
+
+  get 'stake/index'
+
+  resources :documents
   resources :specials
   get 'special/index'
 

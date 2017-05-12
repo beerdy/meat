@@ -1,0 +1,91 @@
+  
+<!-- page_ident идет после header -->
+<% content_for :page_ident do %>
+  <!-- products-breadcrumb -->
+  <div class="products-breadcrumb">
+    <div class="container">
+      <ul>
+        <li><i class="fa fa-home" aria-hidden="true"></i><a href="/">На главную</a><span>|</span></li>
+        <li><%=@title%></li>
+      </ul>
+    </div>
+  </div><!-- //products-breadcrumb -->
+<%end%><!-- //page_ident идет после header -->
+
+<% content_for :page_head do %>
+      <style type="text/css">
+        .w3l_banner_nav_right_banner7{
+          background:url(<%=@special_for_special.image.url%>) no-repeat 0px 0px;
+          background-size:cover;
+          -webkit-background-size:cover;
+          -moz-background-size:cover;
+          -o-background-size:cover;
+          -ms-background-size:cover;
+        }
+      </style>
+
+      <div class="w3l_banner_nav_right_banner7">
+        <h3><%=@special_for_special.description.html_safe%><span class="blink_me"></span></h3>
+      </div>
+      <div class="top-brands vitrina">
+        <h3><%=@title%></h3>
+      </div>
+<% end %>
+
+  <!-- top-brands -->
+  <div class="top-brands top-brands-vitrina ">
+    <div class="container">
+      <div class="w3ls_w3l_banner_nav_right_grid1">
+        <% @products.each_with_index do |product,index|%>
+        <div class="col-md-3 w3ls_w3l_banner_left">
+          <div class="hover14 column">
+          <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
+            <% if product.gift %>
+              <div class="tag">
+                <img src="/assets/tag2.png" alt="Подарок" class="img-responsive" />
+              </div>
+            <%end%>
+            <% if product.special %>
+            <div class="agile_top_brand_left_grid_pos">
+              <img src="/assets/offer2.png" alt="Низкая цена" class="img-responsive" />
+            </div>
+            <%end%>
+            <div class="agile_top_brand_left_grid1">
+              <figure>
+                <div class="snipcart-item block">
+                  <div class="snipcart-thumb">
+                    <a href="single.html"><%= image_tag product.image.url, :class => "img-responsive"  if product.respond_to? :image %></a>
+                    <p><%=product.title%></p>
+                    <h4><i class="fa fa-rub" aria-hidden="true"></i><%=product.price_new%> <% if product.special %><span><i class="fa fa-rub" aria-hidden="true"></i><%=product.price_old%></span><%end%></h4>
+                  </div>
+                  <div class="snipcart-details">
+                    <!-- В корзину
+                    <form action="#" method="post">
+                      <fieldset>
+                        <input type="hidden" name="cmd" value="_cart" />
+                        <input type="hidden" name="add" value="1" />
+                        <input type="hidden" name="business" value=" " />
+                        <input type="hidden" name="item_name" value="knorr instant soup" />
+                        <input type="hidden" name="amount" value="3.00" />
+                        <input type="hidden" name="discount_amount" value="1.00" />
+                        <input type="hidden" name="currency_code" value="USD" />
+                        <input type="hidden" name="return" value=" " />
+                        <input type="hidden" name="cancel_return" value=" " />
+                        <input type="submit" name="submit" value="Add to cart" class="button" />
+                      </fieldset>
+                    </form>
+                    -->
+                    <input type="submit" name="submit" value="Заказать" class="button" />
+                  </div>
+                </div>
+              </figure>
+            </div>
+          </div>
+          </div>
+        </div>
+        <%end%>
+        <div class="clearfix"> </div>
+      </div>
+    </div>
+  </div>
+  <!-- // Top-brands -->

@@ -2,61 +2,52 @@
   <div class="footer">
     <div class="container">
       <div class="col-md-3 w3_footer_grid">
-        <h3>information</h3>
+        <h3>Информация</h3>
         <ul class="w3_footer_grid_list">
-          <li><a href="events.html">Events</a></li>
+          <li><a href="/business/index">Сотрудничество</a></li>
+          <li><a href="/farmers/index">Фермеры</a></li>
+          <li><a href="/job/index">Вакансии</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 w3_footer_grid">
+        <h3>мясоежка</h3>
+        <ul class="w3_footer_grid_list">
           <li><a href="/about/index">О магазине</a></li>
-          <li><a href="products.html">Best Deals</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="short-codes.html">Short Codes</a></li>
+          <li><a href="/documents">Сертификаты и документы</a></li>
+          <li><a href="/service/index">Доставка</a></li>
         </ul>
       </div>
       <div class="col-md-3 w3_footer_grid">
-        <h3>policy info</h3>
-        <ul class="w3_footer_grid_list">
-          <li><a href="faqs.html">FAQ</a></li>
-          <li><a href="privacy.html">privacy policy</a></li>
-          <li><a href="privacy.html">terms of use</a></li>
-        </ul>
+        <h3><%=@contents[2].slave%></h3>
+        <div class="w3_footer_grid_list">
+        <%= @contents[2].description.html_safe %>
+        </div>
       </div>
       <div class="col-md-3 w3_footer_grid">
-        <h3>what in stores</h3>
-        <ul class="w3_footer_grid_list">
-          <li><a href="pet.html">Pet Food</a></li>
-          <li><a href="frozen.html">Frozen Snacks</a></li>
-          <li><a href="kitchen.html">Kitchen</a></li>
-          <li><a href="products.html">Branded Foods</a></li>
-          <li><a href="household.html">Households</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3 w3_footer_grid">
-        <h3>twitter posts</h3>
+        <h3>Часы работы</h3>
         <ul class="w3_footer_grid_list1">
-          <li><label class="fa fa-twitter" aria-hidden="true"></label><i>01 day ago</i><span>Non numquam <a href="#">http://sd.ds/13jklf#</a>
-            eius modi tempora incidunt ut labore et
-            <a href="#">http://sd.ds/1389kjklf#</a>quo nulla.</span></li>
-          <li><label class="fa fa-twitter" aria-hidden="true"></label><i>02 day ago</i><span>Con numquam <a href="#">http://fd.uf/56hfg#</a>
-            eius modi tempora incidunt ut labore et
-            <a href="#">http://fd.uf/56hfg#</a>quo nulla.</span></li>
+          <% @contents[1].description.each_line do |line| %>
+          <% days,hourly = line.split ';' %>
+          <li><label class="fa fa-calendar" aria-hidden="true"></label><i><%=days%></i><span><%=hourly%></span></li>
+          <%end%>
         </ul>
       </div>
       <div class="clearfix"> </div>
       <div class="agile_footer_grids">
         <div class="col-md-3 w3_footer_grid agile_footer_grids_w3_footer">
           <div class="w3_footer_grid_bottom">
-            <h4>100% secure payments</h4>
-            <img src="assets/card.png" alt=" " class="img-responsive" />
+            <h4>100% принимаются платежные системы</h4>
+            <img src="/assets/card.png" alt=" " class="img-responsive" />
           </div>
         </div>
         <div class="col-md-3 w3_footer_grid agile_footer_grids_w3_footer">
           <div class="w3_footer_grid_bottom">
-            <h5>connect with us</h5>
+            <h5>ищите <strong>нас</strong></h5>
             <ul class="agileits_social_icons">
-              <li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-              <li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-              <li><a href="#" class="google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-              <li><a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-              <li><a href="#" class="dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+              <% @contents[3].description.each_line do |line| %>
+              <% icon,link = line.split ';' %>
+              <li><a href="<%=link%>"  target="_blank" class="<%=icon%>"><i class="fa fa-<%=icon%>" aria-hidden="true"></i></a></li>
+              <%end%>
             </ul>
           </div>
         </div>

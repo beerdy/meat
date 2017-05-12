@@ -509,8 +509,14 @@ ul.dropdown-menu.drp-mnu li a i {
 }
 .agile_top_brand_left_grid_pos{
 	position:absolute;
+  margin: 0;
+  padding: 0;
 	top:0%;
 	left:0%;
+}
+.agile_top_brand_left_grid_pos img {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 .agile_top_brand_left_grid1{
 	padding:1em;
