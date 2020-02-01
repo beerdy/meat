@@ -32,7 +32,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'rails_admin', '~> 1.0'
+gem 'rails_admin', '~> 1.4'
 gem 'dragonfly', '~> 1.1.1'
 gem 'font-awesome-sass'
 gem 'russian', '~> 0.6.0'
