@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product_and_group, only: [:show, :edit, :update, :destroy]
 
   # GET /products
   # GET /products.json
@@ -10,6 +10,8 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    spec_super  = Special.where(super: true)
+    @spec_super = spec_super[rand(spec_super.size)]
   end
 
   # GET /products/new
@@ -63,8 +65,9 @@ class ProductsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_product
+    def set_product_and_group
       @product = Product.find(params[:id])
+      @group   = @product.group
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

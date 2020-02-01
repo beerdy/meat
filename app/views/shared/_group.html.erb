@@ -56,7 +56,7 @@
               <figure>
                 <div class="snipcart-item block">
                   <div class="snipcart-thumb">
-                    <a href="single.html"><%= image_tag product.image.url, :class => "img-responsive"  if product.image_stored? %></a>
+                    <a href="/products/<%=product.id%>"><%= image_tag product.image.url, :class => "img-responsive"  if product.image_stored? %></a>
                     <p><%=product.title%></p>
                     <h4><i class="fa fa-rub" aria-hidden="true"></i><%=product.price_new%> <% if product.special %><span><i class="fa fa-rub" aria-hidden="true"></i><%=product.price_old%></span><%end%></h4>
                   </div>

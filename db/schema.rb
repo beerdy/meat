@@ -14,18 +14,18 @@
 ActiveRecord::Schema.define(version: 20170523110024) do
 
   create_table "catalogs", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "description", limit: 65535
-    t.text     "slave",       limit: 65535
-    t.string   "image_uid",   limit: 255
-    t.string   "image_name",  limit: 255
-    t.string   "url",         limit: 255
-    t.integer  "sort",        limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.integer  "group_id",    limit: 4
-    t.integer  "price_old",   limit: 4
-    t.integer  "price_new",   limit: 4
+    t.string   "title"
+    t.text     "description"
+    t.text     "slave"
+    t.string   "image_uid"
+    t.string   "image_name"
+    t.string   "url"
+    t.integer  "sort"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "group_id"
+    t.integer  "price_old"
+    t.integer  "price_new"
     t.boolean  "special"
     t.boolean  "gift"
     t.boolean  "stake"
@@ -33,186 +33,186 @@ ActiveRecord::Schema.define(version: 20170523110024) do
     t.boolean  "set"
   end
 
-  add_index "catalogs", ["group_id"], name: "index_catalogs_on_group_id", using: :btree
+  add_index "catalogs", ["group_id"], name: "index_catalogs_on_group_id"
 
   create_table "contacts", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.string   "phone",       limit: 255
-    t.string   "email",       limit: 255
-    t.string   "image_uid",   limit: 255
-    t.string   "description", limit: 255
-    t.text     "slave",       limit: 65535
-    t.string   "image_name",  limit: 255
-    t.string   "url",         limit: 255
-    t.integer  "sort",        limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "image_uid"
+    t.string   "description"
+    t.text     "slave"
+    t.string   "image_name"
+    t.string   "url"
+    t.integer  "sort"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "contents", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "description", limit: 65535
-    t.text     "slave",       limit: 65535
-    t.string   "image_uid",   limit: 255
-    t.string   "image_name",  limit: 255
-    t.string   "url",         limit: 255
-    t.integer  "sort",        limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "title"
+    t.text     "description"
+    t.text     "slave"
+    t.string   "image_uid"
+    t.string   "image_name"
+    t.string   "url"
+    t.integer  "sort"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "documents", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "description", limit: 65535
-    t.text     "slave",       limit: 65535
-    t.string   "image_uid",   limit: 255
-    t.string   "image_name",  limit: 255
-    t.string   "url",         limit: 255
-    t.integer  "sort",        limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "title"
+    t.text     "description"
+    t.text     "slave"
+    t.string   "image_uid"
+    t.string   "image_name"
+    t.string   "url"
+    t.integer  "sort"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "facts", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "description", limit: 65535
-    t.text     "slave",       limit: 65535
-    t.string   "image_uid",   limit: 255
-    t.string   "image_name",  limit: 255
-    t.string   "url",         limit: 255
-    t.integer  "sort",        limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "title"
+    t.text     "description"
+    t.text     "slave"
+    t.string   "image_uid"
+    t.string   "image_name"
+    t.string   "url"
+    t.integer  "sort"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "groups", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "description", limit: 65535
-    t.text     "slave",       limit: 65535
-    t.string   "image_uid",   limit: 255
-    t.string   "image_name",  limit: 255
-    t.string   "url",         limit: 255
-    t.integer  "sort",        limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.string   "average",     limit: 255
+    t.string   "title"
+    t.text     "description"
+    t.text     "slave"
+    t.string   "image_uid"
+    t.string   "image_name"
+    t.string   "url"
+    t.integer  "sort"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "average"
     t.boolean  "master"
   end
 
   create_table "infos", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "description", limit: 65535
-    t.text     "slave",       limit: 65535
-    t.string   "image_uid",   limit: 255
-    t.string   "image_name",  limit: 255
-    t.string   "url",         limit: 255
-    t.integer  "sort",        limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.string   "group",       limit: 255
+    t.string   "title"
+    t.text     "description"
+    t.text     "slave"
+    t.string   "image_uid"
+    t.string   "image_name"
+    t.string   "url"
+    t.integer  "sort"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "group"
   end
 
   create_table "pages", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "description", limit: 65535
-    t.text     "slave",       limit: 65535
-    t.string   "image_uid",   limit: 255
-    t.string   "image_name",  limit: 255
-    t.string   "url",         limit: 255
-    t.integer  "sort",        limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "title"
+    t.text     "description"
+    t.text     "slave"
+    t.string   "image_uid"
+    t.string   "image_name"
+    t.string   "url"
+    t.integer  "sort"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "products", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "description", limit: 65535
-    t.text     "slave",       limit: 65535
-    t.integer  "price_old",   limit: 4
-    t.integer  "price_new",   limit: 4
-    t.string   "image_uid",   limit: 255
-    t.string   "image_name",  limit: 255
-    t.string   "url",         limit: 255
-    t.integer  "sort",        limit: 4
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
-    t.integer  "group_id",    limit: 4
-    t.boolean  "special",                   default: false
-    t.boolean  "gift",                      default: false
+    t.string   "title"
+    t.text     "description"
+    t.text     "slave"
+    t.integer  "price_old"
+    t.integer  "price_new"
+    t.string   "image_uid"
+    t.string   "image_name"
+    t.string   "url"
+    t.integer  "sort"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "group_id"
+    t.boolean  "special",     default: false
+    t.boolean  "gift",        default: false
     t.boolean  "stake"
     t.boolean  "barbecue"
     t.boolean  "set"
   end
 
-  add_index "products", ["group_id"], name: "index_products_on_group_id", using: :btree
+  add_index "products", ["group_id"], name: "index_products_on_group_id"
 
   create_table "rich_rich_files", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "rich_file_file_name",    limit: 255
-    t.string   "rich_file_content_type", limit: 255
-    t.integer  "rich_file_file_size",    limit: 4
+    t.string   "rich_file_file_name"
+    t.string   "rich_file_content_type"
+    t.integer  "rich_file_file_size"
     t.datetime "rich_file_updated_at"
-    t.string   "owner_type",             limit: 255
-    t.integer  "owner_id",               limit: 4
-    t.text     "uri_cache",              limit: 65535
-    t.string   "simplified_type",        limit: 255,   default: "file"
+    t.string   "owner_type"
+    t.integer  "owner_id"
+    t.text     "uri_cache"
+    t.string   "simplified_type",        default: "file"
   end
 
   create_table "sliders", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "description", limit: 65535
-    t.text     "slave",       limit: 65535
-    t.string   "image_uid",   limit: 255
-    t.string   "image_name",  limit: 255
-    t.string   "url",         limit: 255
-    t.integer  "sort",        limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "title"
+    t.text     "description"
+    t.text     "slave"
+    t.string   "image_uid"
+    t.string   "image_name"
+    t.string   "url"
+    t.integer  "sort"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "specials", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "description", limit: 65535
-    t.text     "slave",       limit: 65535
-    t.string   "image_uid",   limit: 255
-    t.string   "image_name",  limit: 255
-    t.string   "url",         limit: 255
-    t.integer  "sort",        limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "title"
+    t.text     "description"
+    t.text     "slave"
+    t.string   "image_uid"
+    t.string   "image_name"
+    t.string   "url"
+    t.integer  "sort"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.date     "finish"
     t.boolean  "super"
   end
 
   create_table "teams", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "description", limit: 65535
-    t.text     "slave",       limit: 65535
-    t.string   "image_uid",   limit: 255
-    t.string   "image_name",  limit: 255
-    t.string   "url",         limit: 255
-    t.integer  "sort",        limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "title"
+    t.text     "description"
+    t.text     "slave"
+    t.string   "image_uid"
+    t.string   "image_name"
+    t.string   "url"
+    t.integer  "sort"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

@@ -1,49 +1,89 @@
-<p id="notice"><%= notice %></p>
+<% content_for :title, @title+' - ' if @title %>  
+<!-- page_ident идет после header -->
+<% content_for :page_ident do %>
+  <!-- products-breadcrumb -->
+  <div class="products-breadcrumb">
+    <div class="container">
+      <ul>
+        <li><i class="fa fa-home" aria-hidden="true"></i><a href="/">На главную</a><span>|</span></li>
+        <li><%=@title%></li>
+      </ul>
+    </div>
+  </div><!-- //products-breadcrumb -->
+<%end%><!-- //page_ident идет после header -->
 
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
+<% content_for :page_head do %>
+      <style type="text/css">
+        .w3l_banner_nav_right_banner7{
+          background:url(<%= @spec_super.image.url if @spec_super %>) no-repeat 0px 0px;
+          background-size:cover;
+          -webkit-background-size:cover;
+          -moz-background-size:cover;
+          -o-background-size:cover;
+          -ms-background-size:cover;
+        }
+      </style>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+      <div class="w3l_banner_nav_right_banner7">
+        <h3><%=@spec_super.description.html_safe%><span class="blink_me"></span></h3>
+      </div>
+      <div class="top-brands vitrina">
+        <h3><%=@group.title%></h3>
+      </div>
+<% end %>
 
-<p>
-  <strong>Slave:</strong>
-  <%= @product.slave %>
-</p>
+<div class="agileinfo_single">
+  <strong><span style='color:#84C639'>АРТИКУЛ: </span> № <%= @product.id %></strong>
+  <h5><%= @product.title %></h5>
 
-<p>
-  <strong>Price old:</strong>
-  <%= @product.price_old %>
-</p>
-
-<p>
-  <strong>Price new:</strong>
-  <%= @product.price_new %>
-</p>
-
-<p>
-  <strong>Image uid:</strong>
-  <%= @product.image_uid %>
-</p>
-
-<p>
-  <strong>Image name:</strong>
-  <%= @product.image_name %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @product.url %>
-</p>
-
-<p>
-  <strong>Sort:</strong>
-  <%= @product.sort %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+  <div class="col-md-4 agileinfo_single_left">
+    <%= image_tag @product.image.url, :class => "img-responsive"  if @product.image_stored? %>
+  </div>
+  <div class="col-md-8 agileinfo_single_right">
+    <div class="rating1">
+      <span class="starRating">
+        <input id="rating5" type="radio" name="rating" value="5" >
+        <label for="rating5">5</label>
+        <input id="rating4" type="radio" name="rating" value="4" checked="">
+        <label for="rating4">4</label>
+        <input id="rating3" type="radio" name="rating" value="3">
+        <label for="rating3">3</label>
+        <input id="rating2" type="radio" name="rating" value="2">
+        <label for="rating2">2</label>
+        <input id="rating1" type="radio" name="rating" value="1">
+        <label for="rating1">1</label>
+      </span>
+    </div>
+    <div class="w3agile_description">
+      <h4>Описание :</h4><br>
+      <% if @product.description != '' %>
+      <%= @product.description %>
+      <% else %>
+        За подробностями - акции, условия доставки и прочее, обращайтесь в раздел <a href="/contacts">Контакты</a> либо нажмите кнопку «заказать» <br><br>
+        В заказе укажите артикул<strong> № <%= @product.id %></strong> или название данного товара - <strong><%= @product.title %></strong>
+      <% end %>
+    </div>
+    <div class="snipcart-item block">
+      <div class="snipcart-thumb agileinfo_single_right_snipcart">
+        <h4><i class="fa fa-rub" aria-hidden="true"></i><%=@product.price_new%> <% if @product.special %><span><i class="fa fa-rub" aria-hidden="true"></i><%=@product.price_old%></span><%end%></h4>
+      </div>
+      <div class="snipcart-details agileinfo_single_right_details">
+        <form action="#" method="post">
+          <fieldset>
+            <input type="hidden" name="cmd" value="_cart">
+            <input type="hidden" name="add" value="1">
+            <input type="hidden" name="business" value=" ">
+            <input type="hidden" name="item_name" value="pulao basmati rice">
+            <input type="hidden" name="amount" value="21.00">
+            <input type="hidden" name="discount_amount" value="1.00">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="hidden" name="return" value=" ">
+            <input type="hidden" name="cancel_return" value=" ">
+            <a href="/contacts"><input type="submit" name="submit" value="Заказать" class="button" /></a>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"> </div>
+</div>
