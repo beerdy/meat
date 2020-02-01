@@ -1,4 +1,4 @@
-
+<% content_for :title, @page.title+' - ' %>
 <!-- page_ident идет после header -->
 <% content_for :page_ident do %>
   <!-- products-breadcrumb -->
@@ -18,10 +18,10 @@
     <h3><%=@page.title%></h3>
     <div class="w3ls_service_grids">
       <div class="col-md-5 w3ls_service_grid_left">
-        <h4><%=@special_for_delivery.title%></h4>
+        <h4><%=@spec_super.title%></h4>
         <div class="y-offset"></div>
-        <p><%=@special_for_delivery.description.html_safe%></p>
-        <%= image_tag @special_for_delivery.image.url, alt: @special_for_delivery.title, class: 'img-responsive' if @special_for_delivery.image_stored? %>
+        <p><%=@spec_super.description.html_safe%></p>
+        <%= image_tag @spec_super.image.url, alt: @spec_super.title, class: 'img-responsive', width: '100%' if @spec_super.image_stored? %>
       </div>
       <div class="col-md-7 w3ls_service_grid_left">
         <%=@page.description.html_safe%>

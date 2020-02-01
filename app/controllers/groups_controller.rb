@@ -4,6 +4,8 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
+    spec_super = Special.where(super: true)
+    @spec_super = spec_super[rand(spec_super.size)]
   end
 
   # GET /groups/1
@@ -16,6 +18,9 @@ class GroupsController < ApplicationController
     else
       @products = @group.products
     end
+
+     spec_super = Special.where(super: true)
+     @spec_super = spec_super[rand(spec_super.size)]
   end
 
   private

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'farmers/index'
 
   get 'job/index'
@@ -25,10 +26,8 @@ Rails.application.routes.draw do
   mount Rich::Engine => '/rich', :as => 'rich'
   get 'about/index'
 
-  resources :partners
   resources :teams
   resources :pages
-  resources :galleries
   resources :catalogs
   resources :groups
   resources :contents

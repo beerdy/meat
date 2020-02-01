@@ -41,6 +41,12 @@ gem 'rich', github: 'bastiaanterhorst/rich'
 gem 'paperclip'
 gem 'carrierwave'
 
+gem 'devise'
+gem 'yaml_db'
+gem 'unicode'
+gem 'mysql2'
+gem 'puma'
+
 #gem 'devise'
 #gem 'yaml_db'
 

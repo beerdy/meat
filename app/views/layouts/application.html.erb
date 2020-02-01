@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Meat</title>
+  <title><%= yield :title %> Интернет магазин доставки мяса фермеров в Липецке. Тел.906-005</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,7 +11,7 @@
 <!-- header -->
   <div class="agileits_header">
     <div class="w3l_offers">
-      <a href="/specials">Спецпредложения</a>
+      <a href="/specials">Спецпредложения!</a>
     </div>
     <!--
     <div class="w3l_search">
@@ -51,8 +52,7 @@
     <div class="mr_head row">
         <a href="/specials" class="col-md-4 col-sm-4 col-4 title-head"></a>
         <div class="col-md-4 col-sm-4 col-4 title-head">
-            <p class="p-full-head"><i class="fa fa-truck" aria-hidden="true"></i> Интернет магазин доставки мяса фермеров в Липецке. Тел.906-005</p>
-            <p class="p-1080-head"><i class="fa fa-truck" aria-hidden="true"></i> Доставка мяса - Липецк Тел.906-005</p>
+          <%=@contents[5].description.html_safe%>
         </div>
         <a href="/contacts" class="col-md-4 col-sm-4 col-4 title-head"></a>
     </div>
@@ -94,6 +94,7 @@
         <ul class="phone_email">
           <li><i class="fa fa-phone" aria-hidden="true"></i><%=@phone%></li>
           <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:<%=@email%>"><%=@email%></a></li>
+          <li><i class="fa fa-cutlery" aria-hidden="true"></i><a href="/groups">Витрина</a></li>
         </ul>
       </div>
       <div class="clearfix"> </div>

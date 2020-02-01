@@ -27,5 +27,6 @@ module Meat
     config.autoload_paths += %W(#{config.root}/app/controllers/shared)
     config.assets.precompile += %w( .svg .eot .woff .ttf .woff2 .otf)
     config.assets.precompile += %w( *.js )
+
   end
 end

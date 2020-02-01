@@ -124,6 +124,12 @@
   height: 40px;
   font-weight: bold;
 }
+.w33 {
+  height: 25px;
+}
+.vtvt {
+  margin-bottom: 15px;
+}
 @media (max-width: 1080px){
   .top-brands h4 {
     font-size: 1.2em;
@@ -170,6 +176,24 @@
 .alert-success i {
   color: #FA1822;
 }
+.spec_super {
+  margin: 10px 0 0 10px;
+  padding: 0 0 0 0;
+  position:absolute;
+  min-width: 274px;
+  width: 25%;
+
+  .alert-success {
+    background-color: rgba(223,240,216, 0.7);
+  }
+}
+
+@media (max-width: 568px){
+  .spec_super {
+    margin: 3px 0 0 10px;
+  }
+}
+
 /* //-- Спецпредложения -- */
 
 /* -- Боковое меню -- */
@@ -190,7 +214,7 @@
 /* // -- Боковое меню -- */
 
 /* -- Фермеры и бизнес -- */
-.farmers, .business, .job {
+.vtvt, .farmers, .business, .job {
   .text-center {
     color: orange;
     font-weight: bold;
@@ -225,3 +249,4 @@
   }
 }
 /* // -- Фермеры-- */
+

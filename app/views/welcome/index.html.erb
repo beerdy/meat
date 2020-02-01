@@ -75,7 +75,7 @@
       <div class="row">
         <% @count = 0; @groups.each do |group| %>
         <%= @count>=6? (@count=0;'</div><div class="row mr_up_row">'.html_safe) : (@count+=1;'') %>
-        <a class="col-md-2 about_counter_left" style="text-align: center">
+        <a class="col-md-2 about_counter_left" style="text-align: center" href="/groups/<%=group.id%>">
           <span><%=group.title%></span>
           <div style="display: inline-block;"><%= image_tag group.image.url, alt: group.title, class: 'img-responsive' if group.image_stored? %></div>
         </a>
@@ -123,7 +123,9 @@
                 </div>
                 <div class="w3l_fresh_vegetables_grid1_rel_pos">
                   <div class="more m1">
-                    <a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Заправься">Заправься</a>
+                    <% if @goto1 %>
+                    <a href="/groups/<%=@goto1.id%>?type=second" class="button--saqui button--round-l button--text-thick" data-text="Заправься">Заправься</a>
+                    <%end%>
                   </div>
                 </div>
               </div>
@@ -148,9 +150,7 @@
           </div>
           <div class="clearfix"> </div>
           <div class="agileinfo_move_text">
-            <div class="agileinfo_marquee">
-              <h4>Получи свои <span class="blink_me">15% скидки</span> заказав в магазине мяса «МЯСОЕЖКА»</h4>
-            </div>
+            <%=@contents[6].description.html_safe%>
             <div class="agileinfo_breaking_news">
               <span> </span>
             </div>

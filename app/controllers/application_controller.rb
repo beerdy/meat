@@ -10,8 +10,13 @@ class ApplicationController < ActionController::Base
 
     @info = Info.all
     @contents = Content.all
+    
+    begin
     @groups_all = Group.all.sort_by(&:sort)
-
+    rescue Exception => e
+    @groups_all = Group.all
+    end
+    
     @sub = @contents[4].description.html_safe
 
     get_info_block
@@ -42,15 +47,15 @@ private
       @info_small_2 = info if info.group == 'info_small_2'
       @info_small_3 = info if info.group == 'info_small_3'
       @info_small_4 = info if info.group == 'info_small_4'
-      
-      @special_for_special = info if info.group == 'special_for_special'
-      @special_for_delivery = info if info.group == 'special_for_delivery'
+
     end
   end
   def get_groups
     @groups, @groups_second = [],[]
 
     @groups_all.each do |group|
+      
+      @goto1 = group if group.url == 'goto1'
 
       if group.master == true
         @groups.push group
@@ -59,6 +64,5 @@ private
       end
 
     end 
-
   end
 end

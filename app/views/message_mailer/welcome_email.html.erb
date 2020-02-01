@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Сообщение от, <%= @message.name %></h1>
+    <p>
+    <strong>Телефон: </strong> <%= @message.phone %><br>
+    <strong>Е-МАИЛ: </strong> <%= @message.email %><br>
+    <strong>Тема сообщения: </strong> <%= @message.description %><br>
+    <strong>Сообщение: </strong><br>
+    <%= @message.slave %>
+    </p>
+  </body>
+</html>

@@ -29,6 +29,7 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
+        MessageMailer.welcome_email(@contact).deliver_later
         format.html { redirect_to @contact, notice: 'Ваше сообщение успешно доставленно! Наш менеджер свяжется с Вами в ближайшее время!' }
         format.json { render :show, status: :created, location: @contact }
       else

@@ -14,9 +14,17 @@ ru:
       gallery: 'Изображения'
       service: 'Услуги'
       contact: 'Сообщения'
-      catalog: 'Каталог'
+      catalog: 'Каталог дополнительный'
       partner: 'Партнеры'
       rent: 'Аренда'
+      product: 'Каталог основной'
+      team: 'Персонал'
+      special: 'Специальные предложения'
+      page: 'Страницы'
+      info: 'Инфо - блоки'
+      group: 'Группа'
+      fact: 'Факты'
+      document: 'Материалы'
     attributes:
       shared: &shared
         title: 'Наименование'
@@ -24,6 +32,10 @@ ru:
         slave: 'Дополнительно'
         image: 'Изображение'
         url: 'Гиперссылка'
+        sort: 'Сортировка'
+        created_at: 'Добавлен'
+        updated_at: 'Обновлен'
+
       shared1: &shared1
       service:
         <<: *shared
@@ -44,22 +56,56 @@ ru:
         work: 'Медиатека'
       contact:
         name: 'Обратился'
-        email: 'Контакт'
+        email: 'E-mail'
         message: 'Написал'
         created_at: 'Дата обращения'
+        phone: 'Телефон'
+        description: 'Обращения'
       catalog:
         <<: *shared
         sort: 'Сортировка'
-        created_at: 'Добавлен'
-        updated_at: 'Обновлен'
         group: 'Группа'
         sale: 'В распродаже'
         prize: 'С подарком'
         special: 'По акции'
+        gift: 'Подарок'
+        stake: 'Мясо для стейка'
+        barbecue: 'Мясо для шашлыка'
+        set: 'Мясные наборы'
         catalog: 'Выберите подарок'
         color: 'Включить цветовую схему'
         galleries: 'Изображения продукта'
+        price_old: 'Старая цена'
+        price_new: 'Новая цена'
+      product:
+        <<: *shared
+        stake: 'Мясо для стейка'
+        barbecue: 'Мясо для шашлыка'
+        set: 'Мясные наборы'
+        price_old: 'Старая цена'
+        price_new: 'Новая цена'
+      info:
+        <<: *shared
+        group: 'Якорь'
+      special:
+        <<: *shared
+        super: 'Суперпредложение'
+        finish: 'Акция заканчивается'
+      page:
+        <<: *shared
+      group:
+        <<: *shared
+        master: 'Основная группа'
+        products: 'Основные товары'
+        catalogs: 'Дополнительные товары'
+        average: 'Средняя цена'
+      fact:
+        <<: *shared
+      document:
+        <<: *shared
       partner:
+        <<: *shared
+      team:
         <<: *shared
       rent:
         <<: *shared

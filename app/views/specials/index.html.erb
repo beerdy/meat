@@ -1,4 +1,4 @@
-
+<% content_for :title, 'Спецпредложения - ' %>
 <!-- page_ident идет после header -->
 <% content_for :page_ident do %>
   <!-- products-breadcrumb -->
@@ -15,7 +15,7 @@
 <% content_for :page_head do %>
       <style type="text/css">
         .w3l_banner_nav_right_banner7{
-          background:url(<%=@special_for_special.image.url%>) no-repeat 0px 0px;
+          background:url(<%=@spec_super.image.url%>) no-repeat 0px 0px;
           background-size:cover;
           -webkit-background-size:cover;
           -moz-background-size:cover;
@@ -23,9 +23,11 @@
           -ms-background-size:cover;
         }
       </style>
-
+      <div class="spec_super">
+        <div class="alert alert-success" role="alert"><i class="fa fa-clock-o" aria-hidden="true"></i> Акция действует по <%=Russian::strftime(@spec_super.finish.to_date, "%d %B %Y")%></div>
+      </div>
       <div class="w3l_banner_nav_right_banner7">
-        <h3><%=@special_for_special.description.html_safe%><span class="blink_me"></span></h3>
+        <h3><%=@spec_super.description.html_safe%><span class="blink_me"></span></h3>
       </div>
 <% end %>
   <div class="banner special">
@@ -35,7 +37,7 @@
     <div class="events">
       <h3>Спецпредложения</h3>
       <div class="events-bottom">
-        <% count = 0; Special.all.sort_by(&:sort).each do |special| %>
+        <% count = 0; @spec.each do |special| %>
         <%= count>=2? (count=0;'<div class="clearfix"></div></div><div class="events-bottom">'.html_safe) : (count+=1;'') %>
         <div class="col-md-6 events_bottom_left">
           <div class="col-md-4 events_bottom_left1">
