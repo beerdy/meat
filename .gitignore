@@ -6,6 +6,8 @@ capybara-*.html
 /coverage/
 /spec/tmp
 /public
+/shared
+/config
 
 **.orig
 rerun.txt
